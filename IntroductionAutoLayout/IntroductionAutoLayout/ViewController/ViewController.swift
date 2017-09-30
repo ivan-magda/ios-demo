@@ -28,20 +28,46 @@ class ViewController: UIViewController {
   
   // MARK: Instance Variables
   
+  private let topImageViewContainer: UIView = {
+    let container = UIView()
+    container.translatesAutoresizingMaskIntoConstraints = false
+    return container
+  }()
+  
   private let bearImageView: UIImageView = {
     let imageView = UIImageView(image: #imageLiteral(resourceName: "bear_first"))
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.contentMode = .scaleAspectFit
     return imageView
   }()
   
   private let descriptionTextView: UITextView = {
     let textView = UITextView()
     textView.translatesAutoresizingMaskIntoConstraints = false
-    textView.text = "Join us today in our fun and games!"
-    textView.font = UIFont.boldSystemFont(ofSize: 18)
-    textView.textAlignment = .center
     textView.isEditable = false
     textView.isScrollEnabled = false
+    
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .center
+    let attributedText = NSMutableAttributedString(
+      string: "Join us today in our fun and games!",
+      attributes: [
+        NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18),
+        NSAttributedStringKey.paragraphStyle: paragraphStyle
+      ]
+    )
+    attributedText.append(
+      NSAttributedString(
+        string: "\n\nAre you ready for loads and loads of fun? Don't wait any longer! We hope to see you in our stores soon.",
+        attributes: [
+          NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13),
+          NSAttributedStringKey.foregroundColor: UIColor.gray,
+          NSAttributedStringKey.paragraphStyle: paragraphStyle
+        ]
+      )
+    )
+    textView.attributedText = attributedText
+    
     return textView
   }()
   
@@ -64,11 +90,19 @@ extension ViewController {
   }
   
   private func addBearImageView() {
-    view.addSubview(bearImageView)
-    
+    view.addSubview(topImageViewContainer)
     NSLayoutConstraint.activate([
-      bearImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      bearImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
+      topImageViewContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5),
+      topImageViewContainer.topAnchor.constraint(equalTo: view.topAnchor),
+      topImageViewContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      topImageViewContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+    ])
+    
+    topImageViewContainer.addSubview(bearImageView)
+    NSLayoutConstraint.activate([
+      bearImageView.centerXAnchor.constraint(equalTo: topImageViewContainer.centerXAnchor),
+      bearImageView.centerYAnchor.constraint(equalTo: topImageViewContainer.centerYAnchor),
+      bearImageView.heightAnchor.constraint(equalTo: topImageViewContainer.heightAnchor, multiplier: 0.5)
     ])
   }
   
@@ -76,9 +110,10 @@ extension ViewController {
     view.addSubview(descriptionTextView)
     
     NSLayoutConstraint.activate([
-      descriptionTextView.topAnchor.constraint(equalTo: bearImageView.bottomAnchor, constant: 100),
-      descriptionTextView.leftAnchor.constraint(equalTo: view.leftAnchor),
-      descriptionTextView.rightAnchor.constraint(equalTo: view.rightAnchor)
+      descriptionTextView.topAnchor.constraint(equalTo: topImageViewContainer.bottomAnchor),
+      descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+      descriptionTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+      descriptionTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
     ])
   }
   
