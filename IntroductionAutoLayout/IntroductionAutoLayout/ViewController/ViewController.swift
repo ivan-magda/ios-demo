@@ -26,11 +26,60 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  // MARK: Instance Variables
+  
+  private let bearImageView: UIImageView = {
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "bear_first"))
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    return imageView
+  }()
+  
+  private let descriptionTextView: UITextView = {
+    let textView = UITextView()
+    textView.translatesAutoresizingMaskIntoConstraints = false
+    textView.text = "Join us today in our fun and games!"
+    textView.font = UIFont.boldSystemFont(ofSize: 18)
+    textView.textAlignment = .center
+    textView.isEditable = false
+    textView.isScrollEnabled = false
+    return textView
+  }()
+  
   // MARK: Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureUI()
   }
   
 }
 
+// MARK: - ViewController (Configure UI) -
+
+extension ViewController {
+  
+  private func configureUI() {
+    addBearImageView()
+    addDescriptionTextView()
+  }
+  
+  private func addBearImageView() {
+    view.addSubview(bearImageView)
+    
+    NSLayoutConstraint.activate([
+      bearImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      bearImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)
+    ])
+  }
+  
+  private func addDescriptionTextView() {
+    view.addSubview(descriptionTextView)
+    
+    NSLayoutConstraint.activate([
+      descriptionTextView.topAnchor.constraint(equalTo: bearImageView.bottomAnchor, constant: 100),
+      descriptionTextView.leftAnchor.constraint(equalTo: view.leftAnchor),
+      descriptionTextView.rightAnchor.constraint(equalTo: view.rightAnchor)
+    ])
+  }
+  
+}
