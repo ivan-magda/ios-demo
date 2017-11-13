@@ -71,6 +71,36 @@ class ViewController: UIViewController {
     return textView
   }()
   
+  private let previousButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setTitle("PREV", for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+    button.setTitleColor(.gray, for: .normal)
+    
+    return button
+  }()
+  
+  private let nextButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setTitle("NEXT", for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+    button.setTitleColor(UIColor.mainPink, for: .normal)
+    
+    return button
+  }()
+  
+  private let pageControl: UIPageControl = {
+    let pageControl = UIPageControl()
+    pageControl.translatesAutoresizingMaskIntoConstraints = false
+    pageControl.numberOfPages = 4
+    pageControl.currentPageIndicatorTintColor = UIColor.mainPink
+    pageControl.pageIndicatorTintColor = UIColor(red: 249/255.0, green: 207/255.0, blue: 224/255.0, alpha: 1.0)
+    
+    return pageControl
+  }()
+  
   // MARK: Lifecycle
   
   override func viewDidLoad() {
@@ -87,6 +117,7 @@ extension ViewController {
   private func configureUI() {
     addBearImageView()
     addDescriptionTextView()
+    addBottomControls()
   }
   
   private func addBearImageView() {
@@ -114,6 +145,21 @@ extension ViewController {
       descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
       descriptionTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
       descriptionTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
+    ])
+  }
+  
+  private func addBottomControls() {
+    let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
+    bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+    bottomControlsStackView.distribution = .fillEqually
+    
+    view.addSubview(bottomControlsStackView)
+    
+    NSLayoutConstraint.activate([
+      bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50)
     ])
   }
   
