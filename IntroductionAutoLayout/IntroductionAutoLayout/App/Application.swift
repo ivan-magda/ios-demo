@@ -22,28 +22,30 @@
 
 import UIKit
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: Application
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class Application {
   
   // MARK: Instance Variables
   
-  var window: UIWindow?
+  let window: UIWindow
+
+  // MARK: Init
   
-  private var app: Application!
+  init(window: UIWindow) {
+    self.window = window
+    setup()
+  }
   
-  // MARK: - UIApplicationDelegate
+  // MARK: Private
   
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    window = UIWindow()
+  private func setup() {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .horizontal
     
-    guard let window = window else { return false }
-    app = Application(window: window)
+    let swipingCollectionViewController = SwipingCollectionViewController(collectionViewLayout: layout)
     
-    window.makeKeyAndVisible()
-    
-    return true
+    window.rootViewController = swipingCollectionViewController
   }
   
 }
