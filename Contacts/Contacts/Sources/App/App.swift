@@ -22,19 +22,20 @@
 
 import UIKit
 
-// MARK: AppDelegate: UIResponder, UIApplicationDelegate
+// MARK: App
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class App {
 
   // MARK: Instance Variables
 
-  var window: UIWindow?
+  private let rootViewController: UIViewController
 
-  // MARK: UIApplicationDelegate
+  // MARK: Init
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    return true
+  init(_ window: UIWindow) {
+    rootViewController = ViewController()
+
+    window.rootViewController = rootViewController
   }
 
 }
