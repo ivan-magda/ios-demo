@@ -79,6 +79,20 @@ class SwipingCollectionViewController: UICollectionViewController {
     setup()
   }
 
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+
+    coordinator.animate(alongsideTransition: { _ in
+      self.collectionViewLayout.invalidateLayout()
+
+      if self.pageControl.currentPage == 0 {
+        self.collectionView?.contentOffset = .zero
+      } else {
+        self.setPage(index: self.pageControl.currentPage)
+      }
+    }, completion: nil)
+  }
+
   // MARK: UICollectionViewDataSource
 
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
