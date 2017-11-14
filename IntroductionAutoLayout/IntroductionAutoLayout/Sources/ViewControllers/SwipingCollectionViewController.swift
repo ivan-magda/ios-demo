@@ -36,6 +36,41 @@ private let pages = [
 
 class SwipingCollectionViewController: UICollectionViewController {
 
+  // MARK: Instance Variables
+
+  private let previousButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setTitle("PREV", for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+    button.setTitleColor(.gray, for: .normal)
+    button.addTarget(self, action: #selector(onPrevious), for: .touchUpInside)
+
+    return button
+  }()
+
+  private let nextButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setTitle("NEXT", for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+    button.setTitleColor(UIColor.mainPink, for: .normal)
+    button.addTarget(self, action: #selector(onNext), for: .touchUpInside)
+
+    return button
+  }()
+
+  private let pageControl: UIPageControl = {
+    let pageControl = UIPageControl()
+    pageControl.translatesAutoresizingMaskIntoConstraints = false
+    pageControl.numberOfPages = pages.count
+    pageControl.currentPageIndicatorTintColor = UIColor.mainPink
+    pageControl.pageIndicatorTintColor = UIColor.tuftBush
+    pageControl.addTarget(self, action: #selector(onPageChanged), for: .touchUpInside)
+
+    return pageControl
+  }()
+
   // MARK: Lifecycle
 
   override func viewDidLoad() {
@@ -57,6 +92,28 @@ class SwipingCollectionViewController: UICollectionViewController {
     return cell
   }
 
+  // MARK: UIScrollViewDelegate
+
+  override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint,
+                                          targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    let x = targetContentOffset.pointee.x
+    pageControl.currentPage = Int(x / view.frame.width)
+  }
+
+  // MARK: Action
+
+  @objc private func onPrevious() {
+    setPage(index: pageControl.currentPage - 1)
+  }
+
+  @objc private func onNext() {
+    setPage(index: pageControl.currentPage + 1)
+  }
+
+  @objc private func onPageChanged() {
+    setPage(index: pageControl.currentPage)
+  }
+
   // MARK: Private
 
   private func setup() {
@@ -65,6 +122,18 @@ class SwipingCollectionViewController: UICollectionViewController {
     collectionView?.register(PageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     collectionView?.backgroundColor = .white
     collectionView?.isPagingEnabled = true
+    collectionView?.showsHorizontalScrollIndicator = false
+
+    setupBottomControls()
+  }
+
+  private func setPage(index: Int) {
+    guard index >= 0 && index < pages.count else {
+      return
+    }
+
+    pageControl.currentPage = index
+    collectionView?.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
   }
 
 }
@@ -86,6 +155,21 @@ extension SwipingCollectionViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - SwipingCollectionViewController (Configure UI) -
 
 extension SwipingCollectionViewController {
+
+  private func setupBottomControls() {
+    let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
+    bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+    bottomControlsStackView.distribution = .fillEqually
+
+    view.addSubview(bottomControlsStackView)
+
+    NSLayoutConstraint.activate([
+      bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50)
+    ])
+  }
 
   private func configure(_ cell: PageCollectionViewCell, atIndexPath indexPath: IndexPath) {
     let pageData = pages[indexPath.item]
