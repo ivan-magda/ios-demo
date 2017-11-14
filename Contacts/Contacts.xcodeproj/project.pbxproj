@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7EFB604B6D69D8660A8D8C5D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB62538B86130D38240305 /* Constants.swift */; };
 		7EFB61480A20FA53A62F45B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */; };
 		7EFB625782A58031C6CAB0CC /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB63929DEEE4F26625AE7F /* App.swift */; };
 		7EFB64320E9BD8209BF822CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB68B41052506E13C71AF1 /* LaunchScreen.storyboard */; };
-		7EFB64A63A85F1B0ADA54D07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66D314EA444F8BCD2E0B /* ViewController.swift */; };
+		7EFB64A63A85F1B0ADA54D07 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66D314EA444F8BCD2E0B /* ContactsTableViewController.swift */; };
 		7EFB6A7389FC38EB3A253ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6D8FD98A61FF8C33077C /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		75D3EC361FBB911400EF7CE0 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EFB62538B86130D38240305 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7EFB63929DEEE4F26625AE7F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		7EFB66D314EA444F8BCD2E0B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7EFB66D314EA444F8BCD2E0B /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		7EFB679FF6C87AE60BB912AF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EFB6CCA35E63612427483F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Contacts/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
@@ -99,7 +101,7 @@
 		7EFB69F8F120948BE46AE53F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7EFB66D314EA444F8BCD2E0B /* ViewController.swift */,
+				7EFB66D314EA444F8BCD2E0B /* ContactsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				7EFB679FF6C87AE60BB912AF /* Info.plist */,
+				7EFB62538B86130D38240305 /* Constants.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -183,9 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EFB64A63A85F1B0ADA54D07 /* ViewController.swift in Sources */,
+				7EFB64A63A85F1B0ADA54D07 /* ContactsTableViewController.swift in Sources */,
 				7EFB6A7389FC38EB3A253ACE /* AppDelegate.swift in Sources */,
 				7EFB625782A58031C6CAB0CC /* App.swift in Sources */,
+				7EFB604B6D69D8660A8D8C5D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

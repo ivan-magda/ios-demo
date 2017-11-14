@@ -24,18 +24,19 @@ import UIKit
 
 // MARK: App
 
-class App {
+final class App {
 
   // MARK: Instance Variables
 
-  private let rootViewController: UIViewController
+  private let contactsTableViewController: ContactsTableViewController
 
   // MARK: Init
 
   init(_ window: UIWindow) {
-    rootViewController = ViewController()
+    contactsTableViewController = ContactsTableViewController()
+    let navigationController = UINavigationController(rootViewController: contactsTableViewController)
 
-    window.rootViewController = rootViewController
+    window.rootViewController = navigationController
   }
 
 }

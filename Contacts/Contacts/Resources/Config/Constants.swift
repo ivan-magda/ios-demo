@@ -20,16 +20,22 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: ViewController: UIViewController
+// MARK: Constants
 
-class ViewController: UIViewController {
+final class Constants {
 
-  // MARK: View Lifecycle
+  // MARK: Contacts
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  struct Contacts {
+
+    static let names = [
+      ["Amy", "Bill", "Zack", "Steve", "Jack", "Jill", "Mary"],
+      ["Carl", "Chris", "Christina", "Cameron"],
+      ["David", "Dan"],
+      ["Patrick", "Patty"]
+    ]
   }
 
 }
