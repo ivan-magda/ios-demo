@@ -20,32 +20,12 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import Foundation
 
-// MARK: Application
+struct Page {
 
-class Application {
-
-  // MARK: Instance Variables
-
-  let window: UIWindow
-
-  // MARK: Init
-
-  init(window: UIWindow) {
-    self.window = window
-    setup()
-  }
-
-  // MARK: Private
-
-  private func setup() {
-    let layout = UICollectionViewFlowLayout()
-    layout.scrollDirection = .horizontal
-
-    let swipingCollectionViewController = SwipingCollectionViewController(collectionViewLayout: layout)
-
-    window.rootViewController = swipingCollectionViewController
-  }
+  let imageName: String
+  let headerText: String
+  let bodyText: String
 
 }

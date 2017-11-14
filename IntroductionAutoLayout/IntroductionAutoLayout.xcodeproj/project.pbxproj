@@ -10,6 +10,7 @@
 		7EFB6248E6CE592CE24090C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6E82231995CFD41071EE /* Assets.xcassets */; };
 		7EFB63F319FDBEC3F3EFA5C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB66EFA644207D1412717C /* Main.storyboard */; };
 		7EFB65087919BB7EEB7C960D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB60D4892FC540AC5ED75E /* AppDelegate.swift */; };
+		7EFB6580CA1641322B9180A8 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6B69462B11A3E6EFD3E8 /* Page.swift */; };
 		7EFB6687DD01BA784C89ED79 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB62D0624AE1DF39FE8F27 /* Application.swift */; };
 		7EFB67D470E8F2F1C07E846E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6949D9E7D2809106CC3C /* ViewController.swift */; };
 		7EFB699E114A31581F3D997B /* SwipingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB654484173F2933391DB3 /* SwipingCollectionViewController.swift */; };
@@ -29,6 +30,7 @@
 		7EFB66E00D32F264C4D658C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7EFB67611D538D7D0C4624A3 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7EFB6949D9E7D2809106CC3C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7EFB6B69462B11A3E6EFD3E8 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		7EFB6E82231995CFD41071EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 				7EFB6A40E0595B96865016C2 /* App */,
 				7EFB69EC745DC7204DE02CA2 /* ViewControllers */,
 				7EFB6F520BCFC4D6EA34B8B9 /* Common */,
+				7EFB68BED9C31ECBBCDFFB85 /* Model */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -101,6 +104,14 @@
 				7EFB6541479B66A5ECF32EAB /* Info.plist */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		7EFB68BED9C31ECBBCDFFB85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB6B69462B11A3E6EFD3E8 /* Page.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7EFB69EC745DC7204DE02CA2 /* ViewControllers */ = {
@@ -242,6 +253,7 @@
 				7EFB6687DD01BA784C89ED79 /* Application.swift in Sources */,
 				7EFB6B12F3BE23360CF9E5AF /* PageCollectionViewCell.swift in Sources */,
 				7EFB6ADDACCB048BCA27FC37 /* UIColor+AppColors.swift in Sources */,
+				7EFB6580CA1641322B9180A8 /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

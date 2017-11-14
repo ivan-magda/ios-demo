@@ -19,103 +19,117 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 import UIKit
 
 class PageCollectionViewCell: UICollectionViewCell {
-  
+
   // MARK: Instance Variables
-  
+
   private let topImageViewContainer: UIView = {
     let container = UIView()
     container.translatesAutoresizingMaskIntoConstraints = false
+
     return container
   }()
-  
-  private let bearImageView: UIImageView = {
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "bear_first"))
+
+  private let imageView: UIImageView = {
+    let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.contentMode = .scaleAspectFit
+
     return imageView
   }()
-  
+
   private let descriptionTextView: UITextView = {
     let textView = UITextView()
     textView.translatesAutoresizingMaskIntoConstraints = false
     textView.isEditable = false
     textView.isScrollEnabled = false
-    
-    let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.alignment = .center
-    let attributedText = NSMutableAttributedString(
-      string: "Join us today in our fun and games!",
-      attributes: [
-        NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18),
-        NSAttributedStringKey.paragraphStyle: paragraphStyle
-      ]
-    )
-    attributedText.append(
-      NSAttributedString(
-        string: "\n\nAre you ready for loads and loads of fun? Don't wait any longer! We hope to see you in our stores soon.",
-        attributes: [
-          NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13),
-          NSAttributedStringKey.foregroundColor: UIColor.gray,
-          NSAttributedStringKey.paragraphStyle: paragraphStyle
-        ]
-      )
-    )
-    textView.attributedText = attributedText
-    
+
     return textView
   }()
-  
+
+  var page: Page? {
+    didSet {
+      if let page = page {
+        updateOnNewPage(page)
+      }
+    }
+  }
+
   // MARK: - Init
-  
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     configureUI()
   }
-  
+
   required init?(coder aDecoder: NSCoder) {
     fatalError("init?(coder:) has not been implemented")
   }
-  
+
 }
 
 // MARK: - PageCollectionViewCell (Configure UI) -
 
 extension PageCollectionViewCell {
-  
+
   private func configureUI() {
-    addBearImageView()
+    addImageView()
     addDescriptionTextView()
   }
-  
-  private func addBearImageView() {
+
+  private func addImageView() {
     addSubview(topImageViewContainer)
     NSLayoutConstraint.activate([
       topImageViewContainer.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
       topImageViewContainer.topAnchor.constraint(equalTo: topAnchor),
       topImageViewContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
       topImageViewContainer.trailingAnchor.constraint(equalTo: trailingAnchor)
-      ])
-    
-    topImageViewContainer.addSubview(bearImageView)
+    ])
+
+    topImageViewContainer.addSubview(imageView)
     NSLayoutConstraint.activate([
-      bearImageView.centerXAnchor.constraint(equalTo: topImageViewContainer.centerXAnchor),
-      bearImageView.centerYAnchor.constraint(equalTo: topImageViewContainer.centerYAnchor),
-      bearImageView.heightAnchor.constraint(equalTo: topImageViewContainer.heightAnchor, multiplier: 0.5)
-      ])
+      imageView.centerXAnchor.constraint(equalTo: topImageViewContainer.centerXAnchor),
+      imageView.centerYAnchor.constraint(equalTo: topImageViewContainer.centerYAnchor),
+      imageView.heightAnchor.constraint(equalTo: topImageViewContainer.heightAnchor, multiplier: 0.5)
+    ])
   }
-  
+
   private func addDescriptionTextView() {
     addSubview(descriptionTextView)
-    
+
     NSLayoutConstraint.activate([
       descriptionTextView.topAnchor.constraint(equalTo: topImageViewContainer.bottomAnchor),
       descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
       descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
       descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
-      ])
+    ])
   }
-  
+
+  private func updateOnNewPage(_ page: Page) {
+    imageView.image = UIImage(named: page.imageName)
+
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.alignment = .center
+    let attributedText = NSMutableAttributedString(string: page.headerText,
+            attributes: [
+              NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18),
+              NSAttributedStringKey.paragraphStyle: paragraphStyle
+            ]
+    )
+    attributedText.append(
+            NSAttributedString(
+                    string: "\n\n\(page.bodyText)",
+                    attributes: [
+                      NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13),
+                      NSAttributedStringKey.foregroundColor: UIColor.gray,
+                      NSAttributedStringKey.paragraphStyle: paragraphStyle
+                    ]
+            )
+    )
+    descriptionTextView.attributedText = attributedText
+  }
+
 }

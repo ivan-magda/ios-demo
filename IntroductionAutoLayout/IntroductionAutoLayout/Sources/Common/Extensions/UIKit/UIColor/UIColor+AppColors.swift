@@ -23,7 +23,7 @@
 import UIKit
 
 extension UIColor {
-  
-  static let mainPink = UIColor(red: 232/255.0, green: 68/255.0, blue: 133/255.0, alpha: 1.0)
-  
+
+  static let mainPink = UIColor(red: 232 / 255.0, green: 68 / 255.0, blue: 133 / 255.0, alpha: 1.0)
+
 }

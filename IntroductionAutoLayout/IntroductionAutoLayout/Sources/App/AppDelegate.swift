@@ -26,24 +26,26 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  
+
   // MARK: Instance Variables
-  
+
   var window: UIWindow?
-  
+
   private var app: Application!
-  
+
   // MARK: - UIApplicationDelegate
-  
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow()
-    
-    guard let window = window else { return false }
+
+    guard let window = window else {
+      return false
+    }
     app = Application(window: window)
-    
+
     window.makeKeyAndVisible()
-    
+
     return true
   }
-  
+
 }
