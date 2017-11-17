@@ -22,11 +22,13 @@
 
 import UIKit
 
-private let cellReuseIdentifier = "contactsCell"
-
 // MARK: ContactsTableViewController: UITableViewController
 
 final class ContactsTableViewController: UITableViewController {
+
+  // MARK: Instance Variables
+
+  private var showIndexPath = false
 
   // MARK: View Lifecycle
 
@@ -46,14 +48,23 @@ final class ContactsTableViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
+    let cell: ContactsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
     configure(cell, atIndexPath: indexPath)
 
     return cell
   }
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Section: \(section + 1)"
+    return "Section: \(section)"
+  }
+
+  // MARK: Actions
+
+  @objc private func onShowIndexPath() {
+    showIndexPath = !showIndexPath
+
+    let sectionsRange = Range(uncheckedBounds: (0, tableView.numberOfSections))
+    tableView.reloadSections(IndexSet(integersIn: sectionsRange), with: showIndexPath ? .right : .left)
   }
 
 }
@@ -64,14 +75,21 @@ extension ContactsTableViewController {
 
   private func setup() {
     navigationItem.title = "Contacts"
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show IndexPath", style: .plain, target: self,
+            action: #selector(onShowIndexPath))
     navigationController?.navigationBar.prefersLargeTitles = true
 
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+    tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: ContactsTableViewCell.identifier)
   }
 
   private func configure(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
     let name = Constants.Contacts.names[indexPath.section][indexPath.row]
+
     cell.textLabel?.text = name
+
+    if showIndexPath {
+      cell.detailTextLabel?.text = "Section: \(indexPath.section) Row: \(indexPath.row)"
+    }
   }
 
 }

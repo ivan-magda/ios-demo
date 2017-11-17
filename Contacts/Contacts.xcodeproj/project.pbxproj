@@ -10,20 +10,30 @@
 		7EFB604B6D69D8660A8D8C5D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB62538B86130D38240305 /* Constants.swift */; };
 		7EFB61480A20FA53A62F45B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */; };
 		7EFB625782A58031C6CAB0CC /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB63929DEEE4F26625AE7F /* App.swift */; };
+		7EFB62BEB2DA3F7AE5A3330A /* UITableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6FAEB0608DD0554BEA9C /* UITableView+Reuse.swift */; };
 		7EFB64320E9BD8209BF822CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB68B41052506E13C71AF1 /* LaunchScreen.storyboard */; };
-		7EFB64A63A85F1B0ADA54D07 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66D314EA444F8BCD2E0B /* ContactsTableViewController.swift */; };
+		7EFB6708783883E3AB1046C4 /* UITableViewCell+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6841A421AE6A97EAB9FF /* UITableViewCell+ReusableCell.swift */; };
+		7EFB69E02FED5981EC600444 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6378BCC97528D2605A87 /* ReusableCell.swift */; };
 		7EFB6A7389FC38EB3A253ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6D8FD98A61FF8C33077C /* AppDelegate.swift */; };
+		7EFB6DECD654803584032B17 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB623B64AE3D1BF03B35A5 /* ContactsTableViewController.swift */; };
+		7EFB6E566C1FF929B1DEA140 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB622E6F3A557637CBC4EF /* ContactsTableViewCell.swift */; };
+		7EFB6EDB745AFCFC3319CE45 /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB63AD4BEEA654BFD9E498 /* UITableViewHeaderFooterView+ReusableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		75D3EC361FBB911400EF7CE0 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EFB622E6F3A557637CBC4EF /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		7EFB623B64AE3D1BF03B35A5 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		7EFB62538B86130D38240305 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7EFB6378BCC97528D2605A87 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		7EFB63929DEEE4F26625AE7F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		7EFB66D314EA444F8BCD2E0B /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		7EFB63AD4BEEA654BFD9E498 /* UITableViewHeaderFooterView+ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+ReusableCell.swift"; sourceTree = "<group>"; };
 		7EFB679FF6C87AE60BB912AF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		7EFB6841A421AE6A97EAB9FF /* UITableViewCell+ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReusableCell.swift"; sourceTree = "<group>"; };
 		7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EFB6CCA35E63612427483F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Contacts/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		7EFB6D8FD98A61FF8C33077C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7EFB6FAEB0608DD0554BEA9C /* UITableView+Reuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuse.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,15 @@
 			path = Contacts;
 			sourceTree = "<group>";
 		};
+		7EFB603C44F8F3D0C9C15E3A /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB623B64AE3D1BF03B35A5 /* ContactsTableViewController.swift */,
+				7EFB6E2E8D90725FF4F95CD4 /* Cells */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		7EFB62B4B0B9C77B8E8C4CE4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +88,14 @@
 				7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		7EFB635EC78F46958246767E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB6979EDD718ACC79AF371 /* UIKit */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7EFB6558A3CFD2316822CC55 /* Resources */ = {
@@ -85,6 +112,7 @@
 			children = (
 				7EFB69F8F120948BE46AE53F /* ViewControllers */,
 				7EFB663EED86C42C59E88A73 /* App */,
+				7EFB6CDB547E2A542368A7D3 /* Common */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -98,12 +126,39 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		7EFB6979EDD718ACC79AF371 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB6841A421AE6A97EAB9FF /* UITableViewCell+ReusableCell.swift */,
+				7EFB6FAEB0608DD0554BEA9C /* UITableView+Reuse.swift */,
+				7EFB63AD4BEEA654BFD9E498 /* UITableViewHeaderFooterView+ReusableCell.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		7EFB69F8F120948BE46AE53F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7EFB66D314EA444F8BCD2E0B /* ContactsTableViewController.swift */,
+				7EFB603C44F8F3D0C9C15E3A /* Contacts */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7EFB6CDB547E2A542368A7D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB635EC78F46958246767E /* Extensions */,
+				7EFB6378BCC97528D2605A87 /* ReusableCell.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7EFB6E2E8D90725FF4F95CD4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB622E6F3A557637CBC4EF /* ContactsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7EFB6F470E6AA9C03BCEC5E1 /* Config */ = {
@@ -186,10 +241,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EFB64A63A85F1B0ADA54D07 /* ContactsTableViewController.swift in Sources */,
 				7EFB6A7389FC38EB3A253ACE /* AppDelegate.swift in Sources */,
 				7EFB625782A58031C6CAB0CC /* App.swift in Sources */,
 				7EFB604B6D69D8660A8D8C5D /* Constants.swift in Sources */,
+				7EFB6DECD654803584032B17 /* ContactsTableViewController.swift in Sources */,
+				7EFB6E566C1FF929B1DEA140 /* ContactsTableViewCell.swift in Sources */,
+				7EFB6708783883E3AB1046C4 /* UITableViewCell+ReusableCell.swift in Sources */,
+				7EFB62BEB2DA3F7AE5A3330A /* UITableView+Reuse.swift in Sources */,
+				7EFB6EDB745AFCFC3319CE45 /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */,
+				7EFB69E02FED5981EC600444 /* ReusableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
