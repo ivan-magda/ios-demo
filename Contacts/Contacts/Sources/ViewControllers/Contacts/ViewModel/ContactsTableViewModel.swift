@@ -22,20 +22,20 @@
 
 import Foundation
 
-// MARK: Constants
+struct ContactsTableViewModel {
 
-final class Constants {
+  let data: ContactsTableModel
 
-  // MARK: Contacts
+}
 
-  struct Contacts {
+extension ContactsTableViewModel {
 
-    static let names = [
-      ContactsTableModel(isExpanded: true, names: ["Amy", "Bill", "Zack", "Steve", "Jack", "Jill", "Mary"]),
-      ContactsTableModel(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"]),
-      ContactsTableModel(isExpanded: true, names: ["David", "Dan"]),
-      ContactsTableModel(isExpanded: true, names: ["Patrick", "Patty"])
-    ]
+  func getTitle(for index: Int) -> String {
+    return data.names[index].capitalized
+  }
+
+  var actionTitle: String {
+    return data.isExpanded ? "Close" : "Open"
   }
 
 }

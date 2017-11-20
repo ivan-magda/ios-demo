@@ -22,20 +22,10 @@
 
 import Foundation
 
-// MARK: Constants
+struct ContactsTableModel {
 
-final class Constants {
+  var isExpanded: Bool = true
 
-  // MARK: Contacts
-
-  struct Contacts {
-
-    static let names = [
-      ContactsTableModel(isExpanded: true, names: ["Amy", "Bill", "Zack", "Steve", "Jack", "Jill", "Mary"]),
-      ContactsTableModel(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"]),
-      ContactsTableModel(isExpanded: true, names: ["David", "Dan"]),
-      ContactsTableModel(isExpanded: true, names: ["Patrick", "Patty"])
-    ]
-  }
+  let names: [String]
 
 }

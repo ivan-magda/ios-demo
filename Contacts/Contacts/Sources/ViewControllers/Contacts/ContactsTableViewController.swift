@@ -29,6 +29,7 @@ final class ContactsTableViewController: UITableViewController {
   // MARK: Instance Variables
 
   private var showIndexPath = false
+  private var data = Constants.Contacts.names
 
   // MARK: View Lifecycle
 
@@ -40,31 +41,45 @@ final class ContactsTableViewController: UITableViewController {
   // MARK: UITableViewDataSource
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return Constants.Contacts.names.count
+    return data.count
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return Constants.Contacts.names[section].count
+    let item = data[section]
+
+    return item.isExpanded ? item.names.count : 0
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: ContactsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+    return tableView.dequeueReusableCell(for: indexPath) as ContactsTableViewCell
+  }
+
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    var headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ContactsHeaderViewCell.identifier) as? ContactsHeaderViewCell
+
+    if headerView == nil {
+      headerView = ContactsHeaderViewCell { [weak self] (sender) in
+        self?.handleExpandClose(at: section, sender: sender)
+      }
+    }
+
+    return headerView
+  }
+
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return ContactsHeaderViewCell.defaultHeight
+  }
+
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     configure(cell, atIndexPath: indexPath)
-
-    return cell
   }
 
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Section: \(section)"
-  }
+  override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    guard let headerView = view as? ContactsHeaderViewCell else {
+      return
+    }
 
-  // MARK: Actions
-
-  @objc private func onShowIndexPath() {
-    showIndexPath = !showIndexPath
-
-    let sectionsRange = Range(uncheckedBounds: (0, tableView.numberOfSections))
-    tableView.reloadSections(IndexSet(integersIn: sectionsRange), with: showIndexPath ? .right : .left)
+    configure(headerView, forSection: section)
   }
 
 }
@@ -83,13 +98,47 @@ extension ContactsTableViewController {
   }
 
   private func configure(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
-    let name = Constants.Contacts.names[indexPath.section][indexPath.row]
+    let viewModel = ContactsTableViewModel(data: data[indexPath.section])
 
-    cell.textLabel?.text = name
+    cell.textLabel?.text = viewModel.getTitle(for: indexPath.row)
+    cell.detailTextLabel?.text = showIndexPath ? "Section: \(indexPath.section) Row: \(indexPath.row)" : nil
+  }
 
-    if showIndexPath {
-      cell.detailTextLabel?.text = "Section: \(indexPath.section) Row: \(indexPath.row)"
+  private func configure(_ headerViewCell: ContactsHeaderViewCell, forSection section: Int) {
+    let viewModel = ContactsTableViewModel(data: data[section])
+
+    headerViewCell.titleText = "Section: \(section)"
+    headerViewCell.actionTitle = viewModel.actionTitle
+  }
+
+}
+
+// MARK: - Actions -
+
+extension ContactsTableViewController {
+
+  @objc private func onShowIndexPath() {
+    showIndexPath = !showIndexPath
+
+    let sectionsRange = Range(uncheckedBounds: (0, tableView.numberOfSections))
+    tableView.reloadSections(IndexSet(integersIn: sectionsRange), with: showIndexPath ? .right : .left)
+  }
+
+  private func handleExpandClose(at section: Int, sender: UIButton) {
+    let item = data[section]
+    let isExpanded = !item.isExpanded
+
+    data[section].isExpanded = isExpanded
+    let indexPaths = item.names.indices.map { i in IndexPath(row: i, section: section)  }
+
+    if isExpanded {
+      tableView.insertRows(at: indexPaths, with: .fade)
+    } else {
+      tableView.deleteRows(at: indexPaths, with: .fade)
     }
+
+    let viewModel = ContactsTableViewModel(data: data[section])
+    sender.setTitle(viewModel.actionTitle, for: .normal)
   }
 
 }
