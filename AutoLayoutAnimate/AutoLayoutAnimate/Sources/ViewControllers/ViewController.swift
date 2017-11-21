@@ -22,10 +22,84 @@
 
 import UIKit
 
+private let minionImageViewSize: CGFloat = 100
+
+// MARK: ViewController: UIViewController
+
 class ViewController: UIViewController {
+  
+  // MARK: Instance Variables
+  
+  private lazy var minionImageView: UIImageView = {
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "minion"))
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.isUserInteractionEnabled = true
+    imageView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                          action: #selector(onMinionImagePress)))
+    
+    return imageView
+  }()
+  
+  private var leadingAnchor: NSLayoutConstraint!
+  private var trailingAnchor: NSLayoutConstraint!
+  private var topAnchor: NSLayoutConstraint!
+  private var bottomAnchor: NSLayoutConstraint!
+  
+  // MARK: View Lifecycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setup()
+  }
+  
+  // MARK: - Private
+  
+  private func setup() {
+    prepareUI()
+  }
+  
+  // MARK: Actions
+  
+  @objc private func onMinionImagePress() {
+    animateMinionImageView()
   }
 
+}
+
+// MARK: ViewController (UI)
+
+extension ViewController {
+  
+  private func prepareUI() {
+    addMinionImageView()
+  }
+  
+  private func addMinionImageView() {
+    view.addSubview(minionImageView)
+    
+    leadingAnchor = minionImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
+    trailingAnchor = minionImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+    topAnchor = minionImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+    bottomAnchor = minionImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+    
+    NSLayoutConstraint.activate([
+      leadingAnchor,
+      topAnchor,
+      minionImageView.widthAnchor.constraint(equalToConstant: minionImageViewSize),
+      minionImageView.heightAnchor.constraint(equalToConstant: minionImageViewSize)
+    ])
+  }
+  
+  private func animateMinionImageView() {
+    self.leadingAnchor.isActive = false
+    self.trailingAnchor.isActive = true
+    self.topAnchor.isActive = false
+    self.bottomAnchor.isActive = true
+    
+    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1,
+                   initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+                    self.view.layoutIfNeeded()
+    }, completion: nil)
+  }
+  
 }
