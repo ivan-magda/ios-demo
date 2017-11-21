@@ -103,8 +103,8 @@ extension PageCollectionViewCell {
     NSLayoutConstraint.activate([
       descriptionTextView.topAnchor.constraint(equalTo: topImageViewContainer.bottomAnchor),
       descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-      descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-      descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
+      descriptionTextView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 24),
+      descriptionTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -24)
     ])
   }
 
