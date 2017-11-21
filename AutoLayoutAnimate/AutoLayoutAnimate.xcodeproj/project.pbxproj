@@ -11,6 +11,7 @@
 		7EFB66409D37D31F9FA6D31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB697B0EC7A3D9730F2AB8 /* LaunchScreen.storyboard */; };
 		7EFB67E47A4A973201FCF461 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB683C49AF0D1130BDB1D4 /* AppDelegate.swift */; };
 		7EFB6876108A9209DA626BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6FE815929016B1072110 /* Assets.xcassets */; };
+		7EFB6996985454A19178F743 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6E5CEAFEF0C3B96E3095 /* Corner.swift */; };
 		7EFB6E711FEE14DBF796437F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6C0A250AA698D79E088D /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		7EFB6BBCFD367C06281061A7 /* AutoLayoutAnimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayoutAnimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFB6C0A250AA698D79E088D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7EFB6DE24AB8515342B4BD6E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		7EFB6E5CEAFEF0C3B96E3095 /* Corner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		7EFB6FE815929016B1072110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,8 +102,17 @@
 			children = (
 				7EFB683C49AF0D1130BDB1D4 /* AppDelegate.swift */,
 				7EFB62D6AE6885AE8AD5C350 /* ViewControllers */,
+				7EFB6A36950DB2EBBA73CF5A /* Model */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		7EFB6A36950DB2EBBA73CF5A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB6E5CEAFEF0C3B96E3095 /* Corner.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +185,7 @@
 			files = (
 				7EFB6E711FEE14DBF796437F /* ViewController.swift in Sources */,
 				7EFB67E47A4A973201FCF461 /* AppDelegate.swift in Sources */,
+				7EFB6996985454A19178F743 /* Corner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
