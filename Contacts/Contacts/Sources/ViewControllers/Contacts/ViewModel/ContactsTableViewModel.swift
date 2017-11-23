@@ -21,6 +21,7 @@
  */
 
 import Foundation
+import UIKit.UIColor
 
 struct ContactsTableViewModel {
 
@@ -31,11 +32,19 @@ struct ContactsTableViewModel {
 extension ContactsTableViewModel {
 
   func getTitle(for index: Int) -> String {
-    return data.names[index].capitalized
+    let contact = data.contacts[index]
+
+    return contact.name.capitalized
   }
 
   var actionTitle: String {
     return data.isExpanded ? "Close" : "Open"
+  }
+
+  func getAccessoryTintColor(for index: Int) -> UIColor {
+    let contact = data.contacts[index]
+
+    return contact.isFavorite ? .magenta : .lightGray
   }
 
 }

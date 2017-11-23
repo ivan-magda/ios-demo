@@ -20,47 +20,8 @@
  * THE SOFTWARE.
  */
 
-import UIKit.UITableViewCell
+import Foundation
 
-private let accessoryButtonSize: CGFloat = 25
-
-// MARK: ContactsTableViewCell: UITableViewCell
-
-class ContactsTableViewCell: UITableViewCell {
-
-  var onAccessoryCallback: (() -> Void) = {}
-
-  // MARK: Instance Variables
-
-  private lazy var accessoryButton: UIButton = {
-    let button = UIButton(type: .system)
-    button.frame = CGRect(origin: center, size: CGSize(width: accessoryButtonSize, height: accessoryButtonSize))
-    button.setImage(#imageLiteral(resourceName: "fav_star"), for: .normal)
-    button.addTarget(self, action: #selector(onAccessoryButtonPressed), for: .touchUpInside)
-
-    return button
-  }()
-
-  // MARK: Init
-
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    sharedInit()
-  }
-
-  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-    super.init(style: .value1, reuseIdentifier: reuseIdentifier)
-    sharedInit()
-  }
-
-  // MARK: Private
-
-  private func sharedInit() {
-    accessoryView = accessoryButton
-  }
-
-  @objc private func onAccessoryButtonPressed() {
-    onAccessoryCallback()
-  }
+extension String: Error {
 
 }

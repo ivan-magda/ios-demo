@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="024a8d15-5ab0-4a15-90ce-8376b36ce9c2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Contacts/Sources/Model/ContactsTableModel.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsHeaderViewCell.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ViewModel/ContactsTableViewModel.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Contacts/Resources/Assets/Assets.xcassets/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Contacts/Resources/Assets/Assets.xcassets/fav_star.imageset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Contacts/Resources/Assets/Assets.xcassets/fav_star.imageset/fav_star@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Contacts/Sources/Common/Extensions/Foundation/String+Error.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Contacts/Sources/Model/Contact.swift" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Contacts.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Contacts.xcodeproj/project.pbxproj" />
+      <change beforePath="$PROJECT_DIR$/Contacts/Resources/Assets/Assets.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/Contacts/Resources/Assets/Assets.xcassets/AppIcon.appiconset/Contents.json" />
       <change beforePath="$PROJECT_DIR$/Contacts/Resources/Config/Constants.swift" afterPath="$PROJECT_DIR$/Contacts/Resources/Config/Constants.swift" />
+      <change beforePath="$PROJECT_DIR$/Contacts/Sources/Model/ContactsTableModel.swift" afterPath="$PROJECT_DIR$/Contacts/Sources/Model/ContactsTableModel.swift" />
+      <change beforePath="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsTableViewCell.swift" afterPath="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsTableViewCell.swift" />
       <change beforePath="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ContactsTableViewController.swift" afterPath="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ContactsTableViewController.swift" />
+      <change beforePath="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ViewModel/ContactsTableViewModel.swift" afterPath="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ViewModel/ContactsTableViewModel.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,14 +23,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_29D6A79B-60AF-4BBF-BC74-920D3B18D02D" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_1A668178-3F3D-4F32-8435-1C9411843FD6" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ContactsTableViewController.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ContactsTableViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="497">
+              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#1115#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContactsTableViewCell.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsTableViewCell.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
               <folding>
                 <element signature="e#0#1115#0" expanded="false" />
               </folding>
@@ -35,22 +53,11 @@
       <file leaf-file-name="ContactsTableViewModel.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ViewModel/ContactsTableViewModel.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            <state relative-caret-position="476">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
                 <element signature="e#0#1115#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactsHeaderViewCell.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsHeaderViewCell.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#1115#0" expanded="false" />
+                <element signature="e#1117#1134#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,12 +81,14 @@
         <option value="$PROJECT_DIR$/Contacts/Sources/Common/Extensions/UIKit/UITableViewHeaderFooterView+ReusableCell.swift" />
         <option value="$PROJECT_DIR$/Contacts/Sources/Common/ReusableCell.swift" />
         <option value="$PROJECT_DIR$/Contacts/Sources/Common/Extensions/UIKit/UITableView+Reuse.swift" />
-        <option value="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsTableViewCell.swift" />
+        <option value="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsHeaderViewCell.swift" />
+        <option value="$PROJECT_DIR$/Contacts/Sources/Common/Extensions/Foundation/String+Error.swift" />
         <option value="$PROJECT_DIR$/Contacts/Sources/Model/ContactsTableModel.swift" />
         <option value="$PROJECT_DIR$/Contacts/Resources/Config/Constants.swift" />
-        <option value="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsHeaderViewCell.swift" />
+        <option value="$PROJECT_DIR$/Contacts/Sources/Model/Contact.swift" />
         <option value="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ViewModel/ContactsTableViewModel.swift" />
         <option value="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ContactsTableViewController.swift" />
+        <option value="$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsTableViewCell.swift" />
       </list>
     </option>
   </component>
@@ -135,6 +144,13 @@
               <item name="Contacts" type="1d218c8b:XcodeProjectNode" />
               <item name="Contacts" type="fcab9f18:XcodeViewNode" />
               <item name="Resources" type="fcab9f18:XcodeViewNode" />
+              <item name="Assets" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Contacts" type="1d218c8b:XcodeProjectNode" />
+              <item name="Contacts" type="fcab9f18:XcodeViewNode" />
+              <item name="Resources" type="fcab9f18:XcodeViewNode" />
               <item name="Config" type="fcab9f18:XcodeViewNode" />
             </path>
             <path>
@@ -172,6 +188,15 @@
               <item name="Sources" type="fcab9f18:XcodeViewNode" />
               <item name="Common" type="fcab9f18:XcodeViewNode" />
               <item name="Extensions" type="fcab9f18:XcodeViewNode" />
+              <item name="Foundation" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Contacts" type="1d218c8b:XcodeProjectNode" />
+              <item name="Contacts" type="fcab9f18:XcodeViewNode" />
+              <item name="Sources" type="fcab9f18:XcodeViewNode" />
+              <item name="Common" type="fcab9f18:XcodeViewNode" />
+              <item name="Extensions" type="fcab9f18:XcodeViewNode" />
               <item name="UIKit" type="fcab9f18:XcodeViewNode" />
             </path>
             <path>
@@ -195,6 +220,15 @@
               <item name="Sources" type="fcab9f18:XcodeViewNode" />
               <item name="ViewControllers" type="fcab9f18:XcodeViewNode" />
               <item name="Contacts" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Contacts" type="1d218c8b:XcodeProjectNode" />
+              <item name="Contacts" type="fcab9f18:XcodeViewNode" />
+              <item name="Sources" type="fcab9f18:XcodeViewNode" />
+              <item name="ViewControllers" type="fcab9f18:XcodeViewNode" />
+              <item name="Contacts" type="fcab9f18:XcodeViewNode" />
+              <item name="Cells" type="fcab9f18:XcodeViewNode" />
             </path>
           </expand>
           <select />
@@ -248,23 +282,24 @@
       <workItem from="1510832542853" duration="437000" />
       <workItem from="1510953575661" duration="3294000" />
       <workItem from="1511127374793" duration="8210000" />
+      <workItem from="1511458490585" duration="4752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15214000" />
+    <option name="totallyTimeSpent" value="19966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="724" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37648928" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29626688" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37826684" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37551582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -287,11 +322,42 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ContactsTableViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1115#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ViewModel/ContactsTableViewModel.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#1115#0" expanded="false" />
+            <element signature="e#1117#1134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsHeaderViewCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#1115#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ContactsTableViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -350,23 +416,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsTableViewCell.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#1115#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Contacts/Sources/Common/Extensions/UIKit/UITableViewHeaderFooterView+ReusableCell.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#1115#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -374,7 +427,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="37" column="38" lean-forward="true" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -382,7 +434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="318" column="30" lean-forward="false" selection-start-line="318" selection-start-column="30" selection-end-line="318" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -390,6 +441,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contacts/Sources/Common/Extensions/Foundation/String+Error.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="2" lean-forward="false" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contacts/Sources/Model/ContactsTableModel.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contacts/Sources/Model/Contact.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1115#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsHeaderViewCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="120" column="30" lean-forward="true" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
           <folding>
             <element signature="e#0#1115#0" expanded="false" />
           </folding>
@@ -398,34 +482,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Contacts/Resources/Config/Constants.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        <state relative-caret-position="342">
+          <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Contacts/Sources/Model/ContactsTableModel.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsHeaderViewCell.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#1115#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ViewModel/ContactsTableViewModel.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        <state relative-caret-position="476">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1115#0" expanded="false" />
+            <element signature="e#1117#1134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/Cells/ContactsTableViewCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
           <folding>
             <element signature="e#0#1115#0" expanded="false" />
           </folding>
@@ -434,8 +511,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Contacts/Sources/ViewControllers/Contacts/ContactsTableViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="497">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
             <element signature="e#0#1115#0" expanded="false" />
           </folding>

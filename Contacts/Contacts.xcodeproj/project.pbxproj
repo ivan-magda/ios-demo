@@ -14,9 +14,11 @@
 		7EFB62BEB2DA3F7AE5A3330A /* UITableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6FAEB0608DD0554BEA9C /* UITableView+Reuse.swift */; };
 		7EFB64320E9BD8209BF822CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB68B41052506E13C71AF1 /* LaunchScreen.storyboard */; };
 		7EFB6708783883E3AB1046C4 /* UITableViewCell+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6841A421AE6A97EAB9FF /* UITableViewCell+ReusableCell.swift */; };
+		7EFB69517CCBD85A470432CA /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB69C13DFBB1F069FD52D1 /* String+Error.swift */; };
 		7EFB69E02FED5981EC600444 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6378BCC97528D2605A87 /* ReusableCell.swift */; };
 		7EFB69F5838A8D487BB791CA /* ContactsTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6080341E9B04C7DE3957 /* ContactsTableModel.swift */; };
 		7EFB6A7389FC38EB3A253ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6D8FD98A61FF8C33077C /* AppDelegate.swift */; };
+		7EFB6B28584C1C6B047D0A5D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66C22FDD6F99E4E2BE2F /* Contact.swift */; };
 		7EFB6DECD654803584032B17 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB623B64AE3D1BF03B35A5 /* ContactsTableViewController.swift */; };
 		7EFB6E566C1FF929B1DEA140 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB622E6F3A557637CBC4EF /* ContactsTableViewCell.swift */; };
 		7EFB6EDB745AFCFC3319CE45 /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB63AD4BEEA654BFD9E498 /* UITableViewHeaderFooterView+ReusableCell.swift */; };
@@ -34,8 +36,10 @@
 		7EFB63929DEEE4F26625AE7F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		7EFB639F509CDB434CF36E10 /* ContactsHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsHeaderViewCell.swift; sourceTree = "<group>"; };
 		7EFB63AD4BEEA654BFD9E498 /* UITableViewHeaderFooterView+ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+ReusableCell.swift"; sourceTree = "<group>"; };
+		7EFB66C22FDD6F99E4E2BE2F /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		7EFB679FF6C87AE60BB912AF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		7EFB6841A421AE6A97EAB9FF /* UITableViewCell+ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReusableCell.swift"; sourceTree = "<group>"; };
+		7EFB69C13DFBB1F069FD52D1 /* String+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Error.swift"; sourceTree = "<group>"; };
 		7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EFB6CCA35E63612427483F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Contacts/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		7EFB6D8FD98A61FF8C33077C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				7EFB6979EDD718ACC79AF371 /* UIKit */,
+				7EFB6FE8420A85956A4CB67C /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				7EFB6080341E9B04C7DE3957 /* ContactsTableModel.swift */,
+				7EFB66C22FDD6F99E4E2BE2F /* Contact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +199,14 @@
 				7EFB61A605ECDA5610152DCC /* ContactsTableViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7EFB6FE8420A85956A4CB67C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				7EFB69C13DFBB1F069FD52D1 /* String+Error.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +292,8 @@
 				7EFB6FC61D568A0F2B0B5BA8 /* ContactsHeaderViewCell.swift in Sources */,
 				7EFB69F5838A8D487BB791CA /* ContactsTableModel.swift in Sources */,
 				7EFB620CAFE894E2A269D12A /* ContactsTableViewModel.swift in Sources */,
+				7EFB69517CCBD85A470432CA /* String+Error.swift in Sources */,
+				7EFB6B28584C1C6B047D0A5D /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

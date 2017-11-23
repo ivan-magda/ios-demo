@@ -26,6 +26,6 @@ struct ContactsTableModel {
 
   var isExpanded: Bool = true
 
-  let names: [String]
+  var contacts: [Contact]
 
 }

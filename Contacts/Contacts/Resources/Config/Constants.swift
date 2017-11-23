@@ -30,11 +30,17 @@ final class Constants {
 
   struct Contacts {
 
-    static let names = [
-      ContactsTableModel(isExpanded: true, names: ["Amy", "Bill", "Zack", "Steve", "Jack", "Jill", "Mary"]),
-      ContactsTableModel(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"]),
-      ContactsTableModel(isExpanded: true, names: ["David", "Dan"]),
-      ContactsTableModel(isExpanded: true, names: ["Patrick", "Patty"])
+    static let all = [
+      ContactsTableModel(isExpanded: true, contacts: ["Amy", "Bill", "Zack", "Steve", "Jack", "Jill", "Mary"].map {
+        Contact(name: $0, isFavorite: false)
+      }),
+      ContactsTableModel(isExpanded: true, contacts: ["Carl", "Chris", "Christina", "Cameron"].map {
+        Contact(name: $0, isFavorite: false)
+      }),
+      ContactsTableModel(isExpanded: true, contacts: ["David", "Dan"].map {
+        Contact(name: $0, isFavorite: false)
+      }),
+      ContactsTableModel(isExpanded: true, contacts: [Contact(name: "Patrick", isFavorite: false)])
     ]
   }
 

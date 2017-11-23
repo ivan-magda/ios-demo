@@ -29,7 +29,7 @@ final class ContactsTableViewController: UITableViewController {
   // MARK: Instance Variables
 
   private var showIndexPath = false
-  private var data = Constants.Contacts.names
+  private var data = Constants.Contacts.all
 
   // MARK: View Lifecycle
 
@@ -47,7 +47,7 @@ final class ContactsTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     let item = data[section]
 
-    return item.isExpanded ? item.names.count : 0
+    return item.isExpanded ? item.contacts.count : 0
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,7 +58,8 @@ final class ContactsTableViewController: UITableViewController {
     var headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ContactsHeaderViewCell.identifier) as? ContactsHeaderViewCell
 
     if headerView == nil {
-      headerView = ContactsHeaderViewCell { [weak self] (sender) in
+      headerView = ContactsHeaderViewCell {
+        [weak self] (sender) in
         self?.handleExpandClose(at: section, sender: sender)
       }
     }
@@ -71,7 +72,7 @@ final class ContactsTableViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    configure(cell, atIndexPath: indexPath)
+    configure(cell as! ContactsTableViewCell, atIndexPath: indexPath)
   }
 
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -97,11 +98,21 @@ extension ContactsTableViewController {
     tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: ContactsTableViewCell.identifier)
   }
 
-  private func configure(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
+  private func configure(_ cell: ContactsTableViewCell, atIndexPath indexPath: IndexPath) {
     let viewModel = ContactsTableViewModel(data: data[indexPath.section])
 
     cell.textLabel?.text = viewModel.getTitle(for: indexPath.row)
     cell.detailTextLabel?.text = showIndexPath ? "Section: \(indexPath.section) Row: \(indexPath.row)" : nil
+    cell.accessoryView?.tintColor = viewModel.getAccessoryTintColor(for: indexPath.row)
+
+    cell.onAccessoryCallback = { [weak self] in
+      guard let strongSelf = self else {
+        return
+      }
+
+      strongSelf.data[indexPath.section].contacts[indexPath.row].toggleFavorite()
+      strongSelf.tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
   }
 
   private func configure(_ headerViewCell: ContactsHeaderViewCell, forSection section: Int) {
@@ -129,7 +140,9 @@ extension ContactsTableViewController {
     let isExpanded = !item.isExpanded
 
     data[section].isExpanded = isExpanded
-    let indexPaths = item.names.indices.map { i in IndexPath(row: i, section: section)  }
+    let indexPaths = item.contacts.indices.map { i in
+      IndexPath(row: i, section: section)
+    }
 
     if isExpanded {
       tableView.insertRows(at: indexPaths, with: .fade)
