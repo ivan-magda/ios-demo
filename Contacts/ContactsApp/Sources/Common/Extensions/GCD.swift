@@ -22,39 +22,10 @@
 
 import Foundation
 
-// MARK: Contact
+typealias Block = () -> Void
 
-struct Contact {
-
-  // MARK: Values
-  
-  let name: String
-  
-  var surname: String? = nil
-  var phoneNumber: String? = nil
-
-  private(set) var isFavorite: Bool
-  
-  // MARK: Init
-  
-  init(name: String, isFavorite: Bool) {
-    self.name = name
-    self.isFavorite = isFavorite
-  }
-
-  init(name: String, surname: String?, phoneNumber: String?, isFavorite: Bool) {
-    self.name = name
-    self.surname = surname
-    self.phoneNumber = phoneNumber
-    self.isFavorite = isFavorite
-  }
-  
-}
-
-// MARK: - Contact (Mutating) -
-
-extension Contact {
-  mutating func toggleFavorite() {
-    isFavorite = !isFavorite
+func onMain(_ block: @escaping Block) {
+  DispatchQueue.main.async {
+    block()
   }
 }

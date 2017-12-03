@@ -21,40 +21,18 @@
  */
 
 import Foundation
+import Contacts.CNContact
 
-// MARK: Contact
-
-struct Contact {
-
-  // MARK: Values
-  
-  let name: String
-  
-  var surname: String? = nil
-  var phoneNumber: String? = nil
-
-  private(set) var isFavorite: Bool
-  
-  // MARK: Init
-  
-  init(name: String, isFavorite: Bool) {
-    self.name = name
-    self.isFavorite = isFavorite
-  }
-
-  init(name: String, surname: String?, phoneNumber: String?, isFavorite: Bool) {
-    self.name = name
-    self.surname = surname
-    self.phoneNumber = phoneNumber
-    self.isFavorite = isFavorite
-  }
-  
+class CannedContactsBuilder {
 }
 
-// MARK: - Contact (Mutating) -
-
-extension Contact {
-  mutating func toggleFavorite() {
-    isFavorite = !isFavorite
+extension CannedContactsBuilder: ContactsBuilder {
+  func build(_ contacts: [CNContact]) -> [Contact] {
+    return contacts.map { contact in
+      Contact(name: contact.givenName,
+              surname: contact.familyName,
+              phoneNumber: contact.phoneNumbers.first?.value.stringValue,
+              isFavorite: false)
+    }
   }
 }

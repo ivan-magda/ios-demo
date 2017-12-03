@@ -22,39 +22,28 @@
 
 import Foundation
 
-// MARK: Contact
+// MARK: ContactsService
 
-struct Contact {
-
-  // MARK: Values
+class ContactsService {
   
-  let name: String
+  // Instance Variables
   
-  var surname: String? = nil
-  var phoneNumber: String? = nil
-
-  private(set) var isFavorite: Bool
+  private let provider: ContactsProvider
+  private let builder: ContactsBuilder
   
-  // MARK: Init
+  // Init
   
-  init(name: String, isFavorite: Bool) {
-    self.name = name
-    self.isFavorite = isFavorite
-  }
-
-  init(name: String, surname: String?, phoneNumber: String?, isFavorite: Bool) {
-    self.name = name
-    self.surname = surname
-    self.phoneNumber = phoneNumber
-    self.isFavorite = isFavorite
+  init(provider: ContactsProvider, builder: ContactsBuilder) {
+    self.provider = provider
+    self.builder = builder
   }
   
-}
-
-// MARK: - Contact (Mutating) -
-
-extension Contact {
-  mutating func toggleFavorite() {
-    isFavorite = !isFavorite
+  // MARK: Public
+  
+  func all(_ callback: @escaping ([Contact]) -> Void) {
+    provider.all { [unowned self] (contacts) in
+      callback(self.builder.build(contacts))
+    }
   }
+  
 }

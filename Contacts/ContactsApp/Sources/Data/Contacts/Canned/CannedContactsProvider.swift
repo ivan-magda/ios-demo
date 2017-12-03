@@ -21,40 +21,44 @@
  */
 
 import Foundation
+import Contacts
 
-// MARK: Contact
+// MARK: CannedContactsProvider
 
-struct Contact {
-
-  // MARK: Values
+class CannedContactsProvider {
   
-  let name: String
+  // MARK: Private
   
-  var surname: String? = nil
-  var phoneNumber: String? = nil
-
-  private(set) var isFavorite: Bool
-  
-  // MARK: Init
-  
-  init(name: String, isFavorite: Bool) {
-    self.name = name
-    self.isFavorite = isFavorite
-  }
-
-  init(name: String, surname: String?, phoneNumber: String?, isFavorite: Bool) {
-    self.name = name
-    self.surname = surname
-    self.phoneNumber = phoneNumber
-    self.isFavorite = isFavorite
+  private func fetch(_ callback: @escaping ([CNContact]) -> Void) {
+    let store = CNContactStore()
+    
+    store.requestAccess(for: .contacts) { (granted, error) in
+      guard error == nil else {
+        print("Failed to fetch contacts with error: \(String(describing: error))")
+        return callback([])
+      }
+      
+      guard granted == true else {
+        print("Not granted priviliges for Contacts access.")
+        return callback([])
+      }
+      
+      var contacts: [CNContact] = []
+      let keys = [CNContactGivenNameKey, CNContactFamilyNameKey,
+                  CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+      let request = CNContactFetchRequest(keysToFetch: keys)
+      
+      try? store.enumerateContacts(with: request,
+                                   usingBlock: { contact,_ in  contacts.append(contact) })
+      
+      callback(contacts)
+    }
   }
   
 }
 
-// MARK: - Contact (Mutating) -
-
-extension Contact {
-  mutating func toggleFavorite() {
-    isFavorite = !isFavorite
+extension CannedContactsProvider: ContactsProvider {
+  func all(_ callback: @escaping ([CNContact]) -> Void) {
+    fetch(callback)
   }
 }

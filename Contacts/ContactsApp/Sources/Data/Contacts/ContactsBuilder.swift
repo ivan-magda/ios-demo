@@ -21,40 +21,8 @@
  */
 
 import Foundation
+import Contacts.CNContact
 
-// MARK: Contact
-
-struct Contact {
-
-  // MARK: Values
-  
-  let name: String
-  
-  var surname: String? = nil
-  var phoneNumber: String? = nil
-
-  private(set) var isFavorite: Bool
-  
-  // MARK: Init
-  
-  init(name: String, isFavorite: Bool) {
-    self.name = name
-    self.isFavorite = isFavorite
-  }
-
-  init(name: String, surname: String?, phoneNumber: String?, isFavorite: Bool) {
-    self.name = name
-    self.surname = surname
-    self.phoneNumber = phoneNumber
-    self.isFavorite = isFavorite
-  }
-  
-}
-
-// MARK: - Contact (Mutating) -
-
-extension Contact {
-  mutating func toggleFavorite() {
-    isFavorite = !isFavorite
-  }
+protocol ContactsBuilder {
+  func build(_ contacts: [CNContact]) -> [Contact]
 }

@@ -28,14 +28,18 @@ final class ContactsTableViewController: UITableViewController {
 
   // MARK: Instance Variables
 
+  var contactsService: ContactsService!
+  
   private var showIndexPath = false
-  private var data = Constants.Contacts.all
+  private var data = [ContactsTableModel]()
 
   // MARK: View Lifecycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     setup()
+    fetchData()
   }
 
   // MARK: UITableViewDataSource
@@ -102,7 +106,9 @@ extension ContactsTableViewController {
     let viewModel = ContactsTableViewModel(data: data[indexPath.section])
 
     cell.textLabel?.text = viewModel.getTitle(for: indexPath.row)
-    cell.detailTextLabel?.text = showIndexPath ? "Section: \(indexPath.section) Row: \(indexPath.row)" : nil
+    cell.detailTextLabel?.text = showIndexPath
+      ? "Section: \(indexPath.section) Row: \(indexPath.row)"
+      : viewModel.getDetailTitle(for: indexPath.row)
     cell.accessoryView?.tintColor = viewModel.getAccessoryTintColor(for: indexPath.row)
 
     cell.onAccessoryCallback = { [weak self] in
@@ -127,6 +133,17 @@ extension ContactsTableViewController {
 // MARK: - Actions -
 
 extension ContactsTableViewController {
+  
+  private func fetchData() {
+    contactsService.all({ [weak self] (contacts) in
+      self?.data = contacts.chunked(by: 4).map { contacts in
+        ContactsTableModel(isExpanded: true, contacts: contacts)
+      }
+      onMain {
+        self?.tableView.reloadData()
+      }
+    })
+  }
 
   @objc private func onShowIndexPath() {
     showIndexPath = !showIndexPath

@@ -29,11 +29,16 @@ final class App {
   // MARK: Instance Variables
 
   private let contactsTableViewController: ContactsTableViewController
+  private let contactsService: ContactsService
 
   // MARK: Init
 
   init(_ window: UIWindow) {
+    contactsService = ContactsService(provider: CannedContactsProvider(),
+                                      builder: CannedContactsBuilder())
+    
     contactsTableViewController = ContactsTableViewController()
+    contactsTableViewController.contactsService = contactsService
     let navigationController = UINavigationController(rootViewController: contactsTableViewController)
 
     window.rootViewController = navigationController

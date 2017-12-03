@@ -36,6 +36,14 @@ extension ContactsTableViewModel {
 
     return contact.name.capitalized
   }
+  
+  func getDetailTitle(for index: Int) -> String {
+    guard let phoneNumber = data.contacts[index].phoneNumber else {
+      return ""
+    }
+    
+    return phoneNumber
+  }
 
   var actionTitle: String {
     return data.isExpanded ? "Close" : "Open"
