@@ -7,9 +7,9 @@
 
 ## Screenshots
 
-<img src="https://github.com/vanyaland/ios-demo/blob/master/Contacts/Contacts/Resources/Assets/Screenshots/1.png"
+<img src="https://github.com/vanyaland/ios-demo/blob/master/Contacts/ContactsApp/Resources/Assets/Screenshots/1.png"
 width="320" height="560">
-<img src="https://github.com/vanyaland/ios-demo/blob/master/Contacts/Contacts/Resources/Assets/Screenshots/2.png"
+<img src="https://github.com/vanyaland/ios-demo/blob/master/Contacts/ContactsApp/Resources/Assets/Screenshots/2.png"
 width="320" height="560" hspace="8">
-<img src="https://github.com/vanyaland/ios-demo/blob/master/Contacts/Contacts/Resources/Assets/Screenshots/3.png"
+<img src="https://github.com/vanyaland/ios-demo/blob/master/Contacts/ContactsApp/Resources/Assets/Screenshots/3.png"
 width="320" height="560">
