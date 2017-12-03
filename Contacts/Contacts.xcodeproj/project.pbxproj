@@ -76,8 +76,8 @@
 		75D3EC381FBB911400EF7CE0 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				7EFB6601EC32C5AF2C7C5A17 /* Sources */,
 				7EFB6558A3CFD2316822CC55 /* Resources */,
+				7EFB6601EC32C5AF2C7C5A17 /* Sources */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -122,8 +122,8 @@
 		7EFB6601EC32C5AF2C7C5A17 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				7EFB69F8F120948BE46AE53F /* ViewControllers */,
 				7EFB663EED86C42C59E88A73 /* App */,
+				7EFB69F8F120948BE46AE53F /* ViewControllers */,
 				7EFB6CDB547E2A542368A7D3 /* Common */,
 				7EFB6C6B80CD180E8A7F60CA /* Model */,
 			);
