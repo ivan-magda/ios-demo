@@ -7,30 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7556EA751FD3F3B300AF91BA /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7556EA741FD3F3B300AF91BA /* ContactsTableViewController.swift */; };
+		7556EA771FD3F41700AF91BA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7556EA761FD3F41700AF91BA /* Launch Screen.storyboard */; };
 		7EFB604B6D69D8660A8D8C5D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB62538B86130D38240305 /* Constants.swift */; };
 		7EFB61480A20FA53A62F45B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */; };
 		7EFB620CAFE894E2A269D12A /* ContactsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB61A605ECDA5610152DCC /* ContactsTableViewModel.swift */; };
 		7EFB625782A58031C6CAB0CC /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB63929DEEE4F26625AE7F /* App.swift */; };
 		7EFB62BEB2DA3F7AE5A3330A /* UITableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6FAEB0608DD0554BEA9C /* UITableView+Reuse.swift */; };
-		7EFB64320E9BD8209BF822CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB68B41052506E13C71AF1 /* LaunchScreen.storyboard */; };
 		7EFB6708783883E3AB1046C4 /* UITableViewCell+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6841A421AE6A97EAB9FF /* UITableViewCell+ReusableCell.swift */; };
 		7EFB69517CCBD85A470432CA /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB69C13DFBB1F069FD52D1 /* String+Error.swift */; };
 		7EFB69E02FED5981EC600444 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6378BCC97528D2605A87 /* ReusableCell.swift */; };
 		7EFB69F5838A8D487BB791CA /* ContactsTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6080341E9B04C7DE3957 /* ContactsTableModel.swift */; };
 		7EFB6A7389FC38EB3A253ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB6D8FD98A61FF8C33077C /* AppDelegate.swift */; };
 		7EFB6B28584C1C6B047D0A5D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66C22FDD6F99E4E2BE2F /* Contact.swift */; };
-		7EFB6DECD654803584032B17 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB623B64AE3D1BF03B35A5 /* ContactsTableViewController.swift */; };
 		7EFB6E566C1FF929B1DEA140 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB622E6F3A557637CBC4EF /* ContactsTableViewCell.swift */; };
 		7EFB6EDB745AFCFC3319CE45 /* UITableViewHeaderFooterView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB63AD4BEEA654BFD9E498 /* UITableViewHeaderFooterView+ReusableCell.swift */; };
 		7EFB6FC61D568A0F2B0B5BA8 /* ContactsHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB639F509CDB434CF36E10 /* ContactsHeaderViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		75D3EC361FBB911400EF7CE0 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7556EA741FD3F3B300AF91BA /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		7556EA761FD3F41700AF91BA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		75D3EC361FBB911400EF7CE0 /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFB6080341E9B04C7DE3957 /* ContactsTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableModel.swift; sourceTree = "<group>"; };
 		7EFB61A605ECDA5610152DCC /* ContactsTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewModel.swift; sourceTree = "<group>"; };
 		7EFB622E6F3A557637CBC4EF /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
-		7EFB623B64AE3D1BF03B35A5 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		7EFB62538B86130D38240305 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7EFB6378BCC97528D2605A87 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		7EFB63929DEEE4F26625AE7F /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		7EFB6841A421AE6A97EAB9FF /* UITableViewCell+ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReusableCell.swift"; sourceTree = "<group>"; };
 		7EFB69C13DFBB1F069FD52D1 /* String+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Error.swift"; sourceTree = "<group>"; };
 		7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7EFB6CCA35E63612427483F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Contacts/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		7EFB6D8FD98A61FF8C33077C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFB6FAEB0608DD0554BEA9C /* UITableView+Reuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuse.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +60,7 @@
 		75D3EC2D1FBB911400EF7CE0 = {
 			isa = PBXGroup;
 			children = (
-				75D3EC381FBB911400EF7CE0 /* Contacts */,
+				75D3EC381FBB911400EF7CE0 /* ContactsApp */,
 				75D3EC371FBB911400EF7CE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,24 +68,23 @@
 		75D3EC371FBB911400EF7CE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				75D3EC361FBB911400EF7CE0 /* Contacts.app */,
+				75D3EC361FBB911400EF7CE0 /* ContactsApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		75D3EC381FBB911400EF7CE0 /* Contacts */ = {
+		75D3EC381FBB911400EF7CE0 /* ContactsApp */ = {
 			isa = PBXGroup;
 			children = (
 				7EFB6558A3CFD2316822CC55 /* Resources */,
 				7EFB6601EC32C5AF2C7C5A17 /* Sources */,
 			);
-			path = Contacts;
+			path = ContactsApp;
 			sourceTree = "<group>";
 		};
 		7EFB603C44F8F3D0C9C15E3A /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				7EFB623B64AE3D1BF03B35A5 /* ContactsTableViewController.swift */,
 				7EFB6E2E8D90725FF4F95CD4 /* Cells */,
 				7EFB6F6BC0B5B228CA41520F /* ViewModel */,
 			);
@@ -95,8 +94,8 @@
 		7EFB62B4B0B9C77B8E8C4CE4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				7EFB68B41052506E13C71AF1 /* LaunchScreen.storyboard */,
 				7EFB6A2A922D27F669B3BC36 /* Assets.xcassets */,
+				7556EA761FD3F41700AF91BA /* Launch Screen.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -153,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				7EFB603C44F8F3D0C9C15E3A /* Contacts */,
+				7556EA741FD3F3B300AF91BA /* ContactsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		75D3EC351FBB911400EF7CE0 /* Contacts */ = {
+		75D3EC351FBB911400EF7CE0 /* ContactsApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75D3EC481FBB911400EF7CE0 /* Build configuration list for PBXNativeTarget "Contacts" */;
+			buildConfigurationList = 75D3EC481FBB911400EF7CE0 /* Build configuration list for PBXNativeTarget "ContactsApp" */;
 			buildPhases = (
 				75D3EC321FBB911400EF7CE0 /* Sources */,
 				75D3EC331FBB911400EF7CE0 /* Frameworks */,
@@ -224,9 +224,9 @@
 			);
 			dependencies = (
 			);
-			name = Contacts;
+			name = ContactsApp;
 			productName = Contacts;
-			productReference = 75D3EC361FBB911400EF7CE0 /* Contacts.app */;
+			productReference = 75D3EC361FBB911400EF7CE0 /* ContactsApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -245,7 +245,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 75D3EC311FBB911400EF7CE0 /* Build configuration list for PBXProject "Contacts" */;
+			buildConfigurationList = 75D3EC311FBB911400EF7CE0 /* Build configuration list for PBXProject "ContactsApp" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -258,7 +258,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				75D3EC351FBB911400EF7CE0 /* Contacts */,
+				75D3EC351FBB911400EF7CE0 /* ContactsApp */,
 			);
 		};
 /* End PBXProject section */
@@ -268,7 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EFB64320E9BD8209BF822CD /* LaunchScreen.storyboard in Resources */,
+				7556EA771FD3F41700AF91BA /* Launch Screen.storyboard in Resources */,
 				7EFB61480A20FA53A62F45B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,8 +282,8 @@
 			files = (
 				7EFB6A7389FC38EB3A253ACE /* AppDelegate.swift in Sources */,
 				7EFB625782A58031C6CAB0CC /* App.swift in Sources */,
+				7556EA751FD3F3B300AF91BA /* ContactsTableViewController.swift in Sources */,
 				7EFB604B6D69D8660A8D8C5D /* Constants.swift in Sources */,
-				7EFB6DECD654803584032B17 /* ContactsTableViewController.swift in Sources */,
 				7EFB6E566C1FF929B1DEA140 /* ContactsTableViewCell.swift in Sources */,
 				7EFB6708783883E3AB1046C4 /* UITableViewCell+ReusableCell.swift in Sources */,
 				7EFB62BEB2DA3F7AE5A3330A /* UITableView+Reuse.swift in Sources */,
@@ -298,17 +298,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7EFB68B41052506E13C71AF1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7EFB6CCA35E63612427483F1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		75D3EC461FBB911400EF7CE0 /* Debug */ = {
@@ -424,7 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UNHY8UY6E;
-				INFOPLIST_FILE = "$(SRCROOT)/Contacts/Resources/Config/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ContactsApp/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.Contacts;
@@ -440,7 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UNHY8UY6E;
-				INFOPLIST_FILE = "$(SRCROOT)/Contacts/Resources/Config/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ContactsApp/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivanmagda.Contacts;
@@ -453,7 +442,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		75D3EC311FBB911400EF7CE0 /* Build configuration list for PBXProject "Contacts" */ = {
+		75D3EC311FBB911400EF7CE0 /* Build configuration list for PBXProject "ContactsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75D3EC461FBB911400EF7CE0 /* Debug */,
@@ -462,7 +451,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75D3EC481FBB911400EF7CE0 /* Build configuration list for PBXNativeTarget "Contacts" */ = {
+		75D3EC481FBB911400EF7CE0 /* Build configuration list for PBXNativeTarget "ContactsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75D3EC491FBB911400EF7CE0 /* Debug */,
