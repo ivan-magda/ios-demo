@@ -25,11 +25,61 @@ import UIKit
 // MARK: ViewController: UIViewController
 
 class ViewController: UIViewController {
+  
+  // MARK: Instance Variables
+  
+  private lazy var shapeLayer: CAShapeLayer = {
+    return getCircularShape()
+  }()
 
   // MARK: Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setup()
+  }
+  
+  // MARK: Actions
+  
+  @objc private func onTap() {
+    let animation = CABasicAnimation(keyPath: "strokeEnd")
+    animation.toValue = 1
+    animation.duration = 0.75
+    animation.fillMode = kCAFillModeForwards
+    animation.isRemovedOnCompletion = false
+    
+    shapeLayer.add(animation, forKey: "strokeEndAnimation")
+  }
+  
+  // MARK: Private
+  
+  private func setup() {
+    let trackLayer = getCircularShape()
+    trackLayer.strokeColor = UIColor(.revolver).cgColor
+    
+    shapeLayer.strokeEnd = 0
+    
+    view.layer.addSublayer(trackLayer)
+    view.layer.addSublayer(shapeLayer)
+    view.backgroundColor = UIColor(.vulcan)
+    view.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                     action: #selector(onTap)))
+  }
+  
+  private func getCircularShape() -> CAShapeLayer {
+    let center = view.center
+    let circularPath = UIBezierPath(arcCenter: center, radius: 100,
+                                    startAngle: -CGFloat.pi / 2,
+                                    endAngle: 2 * CGFloat.pi, clockwise: true)
+    
+    let layer = CAShapeLayer()
+    layer.path = circularPath.cgPath
+    layer.fillColor = UIColor.clear.cgColor
+    layer.strokeColor = UIColor(.ruby).cgColor
+    layer.lineWidth = 10
+    layer.lineCap = kCALineCapRound
+    
+    return layer
   }
   
 }
