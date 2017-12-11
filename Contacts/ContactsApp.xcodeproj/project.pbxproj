@@ -147,7 +147,7 @@
 			children = (
 				7EFB6979EDD718ACC79AF371 /* UIKit */,
 				7EFB6FE8420A85956A4CB67C /* Foundation */,
-				7556EA871FD40B1200AF91BA /* GCD.swift */,
+				7EFB6378BCC97528D2605A87 /* ReusableCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				7EFB635EC78F46958246767E /* Extensions */,
-				7EFB6378BCC97528D2605A87 /* ReusableCell.swift */,
+				7556EA871FD40B1200AF91BA /* GCD.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";

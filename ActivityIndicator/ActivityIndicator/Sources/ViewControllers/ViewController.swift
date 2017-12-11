@@ -22,6 +22,8 @@
 
 import UIKit
 
+private let fileToDownloadUrlString = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_2mb.mp4"
+
 // MARK: ViewController: UIViewController
 
 class ViewController: UIViewController {
@@ -31,7 +33,28 @@ class ViewController: UIViewController {
   private lazy var shapeLayer: CAShapeLayer = {
     return getCircularShape()
   }()
-
+  
+  private let percentageLabel: UILabel = {
+    let label = UILabel()
+    label.textAlignment = .center
+    label.font = UIFont.boldSystemFont(ofSize: 32)
+    label.textColor = .white
+    label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+    
+    return label
+  }()
+  
+  private lazy var urlSession: URLSession = {
+    let configuration = URLSessionConfiguration.default
+    let queue = OperationQueue()
+    let session = URLSession(configuration: configuration, delegate: self,
+                             delegateQueue: queue)
+    
+    return session
+  }()
+  
+  private var downloadTask: URLSessionDownloadTask? = nil
+  
   // MARK: Life Cycle
   
   override func viewDidLoad() {
@@ -42,13 +65,7 @@ class ViewController: UIViewController {
   // MARK: Actions
   
   @objc private func onTap() {
-    let animation = CABasicAnimation(keyPath: "strokeEnd")
-    animation.toValue = 1
-    animation.duration = 0.75
-    animation.fillMode = kCAFillModeForwards
-    animation.isRemovedOnCompletion = false
-    
-    shapeLayer.add(animation, forKey: "strokeEndAnimation")
+    beginDownloadingFile()
   }
   
   // MARK: Private
@@ -64,12 +81,36 @@ class ViewController: UIViewController {
     view.backgroundColor = UIColor(.vulcan)
     view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                      action: #selector(onTap)))
+    
+    percentageLabel.center = view.center
+    view.addSubview(percentageLabel)
+    
+    updateDownloadProgress(0)
   }
   
+  private func beginDownloadingFile() {
+    if let downloadTask = downloadTask {
+      downloadTask.cancel()
+    }
+    
+    guard let url = URL(string: fileToDownloadUrlString) else {
+      return print(#function, " Failed to download file.")
+    }
+    
+    updateDownloadProgress(0)
+    
+    downloadTask = urlSession.downloadTask(with: url)
+    downloadTask!.resume()
+  }
+  
+}
+
+// MARK: - ViewController - (UI) -
+
+extension ViewController {
+  
   private func getCircularShape() -> CAShapeLayer {
-    let center = view.center
-    let circularPath = UIBezierPath(arcCenter: center, radius: 100,
-                                    startAngle: -CGFloat.pi / 2,
+    let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0,
                                     endAngle: 2 * CGFloat.pi, clockwise: true)
     
     let layer = CAShapeLayer()
@@ -78,8 +119,50 @@ class ViewController: UIViewController {
     layer.strokeColor = UIColor(.ruby).cgColor
     layer.lineWidth = 10
     layer.lineCap = kCALineCapRound
+    layer.position = view.center
+    layer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
     
     return layer
+  }
+  
+  private func animateCircle() {
+    let animation = CABasicAnimation(keyPath: "strokeEnd")
+    animation.toValue = 1
+    animation.duration = 0.75
+    animation.fillMode = kCAFillModeForwards
+    animation.isRemovedOnCompletion = false
+    
+    shapeLayer.add(animation, forKey: "strokeEndAnimation")
+  }
+  
+  private func updateDownloadProgress(_ progress: CGFloat) {
+    shapeLayer.strokeEnd = progress
+    percentageLabel.text = "\(Int(progress * 100)) %"
+  }
+  
+}
+
+// MARK: - ViewController: URLSessionDownloadDelegate -
+
+extension ViewController: URLSessionDownloadDelegate {
+  
+  func urlSession(_ session: URLSession,
+                  downloadTask: URLSessionDownloadTask,
+                  didWriteData bytesWritten: Int64,
+                  totalBytesWritten: Int64,
+                  totalBytesExpectedToWrite: Int64) {
+    let percentage = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+    
+    onMain {
+      self.updateDownloadProgress(CGFloat(percentage))
+    }
+    
+    print(percentage * 100)
+  }
+  
+  func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask,
+                  didFinishDownloadingTo location: URL) {
+    print(#function)
   }
   
 }
