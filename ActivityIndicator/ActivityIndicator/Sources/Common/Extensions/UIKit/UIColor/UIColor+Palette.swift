@@ -28,6 +28,7 @@ extension UIColor {
     case revolver
     case ruby
     case vulcan
+    case wineBerry
   }
   
   convenience init(_ colorType: ColorType) {
@@ -38,6 +39,8 @@ extension UIColor {
       self.init(red: 0.85, green: 0.05, blue: 0.39, alpha: 1.00)
     case .vulcan:
       self.init(red: 0.07, green: 0.08, blue: 0.11, alpha: 1.00)
+    case .wineBerry:
+      self.init(red: 0.36, green: 0.11, blue: 0.24, alpha: 1.00)
     }
   }
   

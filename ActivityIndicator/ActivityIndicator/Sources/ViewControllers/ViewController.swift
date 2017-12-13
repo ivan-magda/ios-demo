@@ -33,6 +33,10 @@ class ViewController: UIViewController {
   private lazy var shapeLayer: CAShapeLayer = {
     return getCircularShape()
   }()
+
+  private lazy var pulsatingLayer: CAShapeLayer = {
+    return getCircularShape()
+  }()
   
   private let percentageLabel: UILabel = {
     let label = UILabel()
@@ -62,6 +66,16 @@ class ViewController: UIViewController {
     setup()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    addNotificationObservers()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   // MARK: Actions
   
   @objc private func onTap() {
@@ -73,9 +87,14 @@ class ViewController: UIViewController {
   private func setup() {
     let trackLayer = getCircularShape()
     trackLayer.strokeColor = UIColor(.revolver).cgColor
-    
+    trackLayer.fillColor = UIColor(.vulcan).cgColor
+
+    pulsatingLayer.strokeColor = UIColor.clear.cgColor
+    pulsatingLayer.fillColor = UIColor(.wineBerry).cgColor
+
     shapeLayer.strokeEnd = 0
-    
+
+    view.layer.addSublayer(pulsatingLayer)
     view.layer.addSublayer(trackLayer)
     view.layer.addSublayer(shapeLayer)
     view.backgroundColor = UIColor(.vulcan)
@@ -86,6 +105,7 @@ class ViewController: UIViewController {
     view.addSubview(percentageLabel)
     
     updateDownloadProgress(0)
+    animatePulsatingLayer()
   }
   
   private func beginDownloadingFile() {
@@ -103,11 +123,26 @@ class ViewController: UIViewController {
     downloadTask!.resume()
   }
   
+  private func addNotificationObservers() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(handleEnterForeground),
+                                           name: .UIApplicationWillEnterForeground,
+                                           object: nil)
+  }
+  
+  @objc private func handleEnterForeground() {
+    animatePulsatingLayer()
+  }
+  
 }
 
 // MARK: - ViewController - (UI) -
 
 extension ViewController {
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
   
   private func getCircularShape() -> CAShapeLayer {
     let circularPath = UIBezierPath(arcCenter: .zero, radius: 100, startAngle: 0,
@@ -133,6 +168,17 @@ extension ViewController {
     animation.isRemovedOnCompletion = false
     
     shapeLayer.add(animation, forKey: "strokeEndAnimation")
+  }
+
+  private func animatePulsatingLayer() {
+    let animation = CABasicAnimation(keyPath: "transform.scale")
+    animation.toValue = 1.3
+    animation.duration = 0.75
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    animation.autoreverses = true
+    animation.repeatCount = Float.infinity
+    
+    pulsatingLayer.add(animation, forKey: "pulsating")
   }
   
   private func updateDownloadProgress(_ progress: CGFloat) {
