@@ -8,3 +8,4 @@ This is repository where I will be posting iOS demo projects written in the Swif
 	- [Contacts](./Contacts)
 	- [AutoLayoutAnimate](./AutoLayoutAnimate)
 	- [ActivityIndicator](./ActivityIndicator)
+	- [Group by](./GroupingFunction)
