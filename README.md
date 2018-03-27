@@ -3,9 +3,15 @@
 This is repository where I will be posting iOS demo projects written in the Swift and Objective-C languages.
 
 #### Subdomains:
-- Swift:
-	- [Introduction to Auto Layout](./IntroductionAutoLayout)
+- UITableView:
 	- [Contacts](./Contacts)
+	- [Group by](./GroupingFunction)
+- AutoLayout:
+	- [Introduction to Auto Layout](./IntroductionAutoLayout)
+	- [AutoLayoutAnimate](./AutoLayoutAnimate)
+- Animation:
 	- [AutoLayoutAnimate](./AutoLayoutAnimate)
 	- [ActivityIndicator](./ActivityIndicator)
-	- [Group by](./GroupingFunction)
+	- [UIButton Animation](./UIButtonAnimate)
+- Custom Controls:
+	- [ActivityIndicator](./ActivityIndicator)
