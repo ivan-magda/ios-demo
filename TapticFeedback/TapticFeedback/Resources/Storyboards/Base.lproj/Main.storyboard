@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TapticFeedback" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAq-AG-4h8">
+                                <rect key="frame" x="35" y="145" width="90" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.090196078430000007" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="MPN-V9-9CS"/>
+                                    <constraint firstAttribute="width" constant="90" id="r0S-Iu-JTD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Error">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="errorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1IL-KG-N8N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfD-NJ-Rlb">
+                                <rect key="frame" x="76" y="92" width="223" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KhR-gy-27t"/>
+                                    <constraint firstAttribute="width" constant="223" id="oed-z5-sUd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opT-eY-oCl">
+                                <rect key="frame" x="142" y="145" width="90" height="36"/>
+                                <color key="backgroundColor" red="0.4417813122" green="0.73147308830000002" blue="0.50982415680000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="JJU-mY-0HB"/>
+                                    <constraint firstAttribute="height" constant="36" id="aQH-OO-9wx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Success">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="successButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYI-cb-wun"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb6-B4-KYL">
+                                <rect key="frame" x="249" y="145" width="90" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.58232953256990383" blue="0.040560080346414007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="NR1-K1-VpE"/>
+                                    <constraint firstAttribute="width" constant="90" id="yaZ-X8-F1s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Warning">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="warningButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4gK-ov-IKM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impact Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwg-Sz-3Gd">
+                                <rect key="frame" x="76" y="259" width="223" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="nQ0-kg-wTu"/>
+                                    <constraint firstAttribute="height" constant="22" id="y87-jo-ilD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bm-4l-mWk">
+                                <rect key="frame" x="35" y="313" width="90" height="36"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.49803921569999998" blue="0.70980392160000005" alpha="0.38452482876712329" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="EIo-si-Jr7"/>
+                                    <constraint firstAttribute="width" constant="90" id="NX4-pT-oQM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Light">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="lightButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UbD-E9-mpO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztt-1g-9Vm">
+                                <rect key="frame" x="142" y="313" width="90" height="36"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.49803921569999998" blue="0.70980392160000005" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="1eW-SU-Cf1"/>
+                                    <constraint firstAttribute="height" constant="36" id="Sro-i2-uH5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Medium">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mediumButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfx-eW-eSO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1go-CR-aYF">
+                                <rect key="frame" x="249" y="313" width="90" height="36"/>
+                                <color key="backgroundColor" red="0.16298441688111318" green="0.46580942563791433" blue="0.76162964105606079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="IJd-tN-dfR"/>
+                                    <constraint firstAttribute="height" constant="36" id="L7M-nk-1uo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Heavy">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="heavyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eDI-hD-8W3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selection Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-Qt-qcx">
+                                <rect key="frame" x="76" y="424" width="223" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="gNE-x4-Fpt"/>
+                                    <constraint firstAttribute="width" constant="223" id="hEO-L7-Xlo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlK-3D-aaz">
+                                <rect key="frame" x="96" y="478" width="90" height="36"/>
+                                <color key="backgroundColor" red="0.29730179905891418" green="0.84926223754882812" blue="0.39087057113647461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="kvp-WA-zwF"/>
+                                    <constraint firstAttribute="height" constant="36" id="wNn-Ba-9ue"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Selection">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LlC-Se-7U1"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yM5-4Q-LbK">
+                                <rect key="frame" x="237" y="481" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="TBr-eg-56C"/>
+                                    <constraint firstAttribute="height" constant="31" id="jL1-Jt-ATO"/>
+                                </constraints>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kwg-Sz-3Gd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1bB-Gu-dDs"/>
+                            <constraint firstItem="a9p-Qt-qcx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2MT-lc-hGV"/>
+                            <constraint firstItem="4bm-4l-mWk" firstAttribute="centerY" secondItem="Ztt-1g-9Vm" secondAttribute="centerY" id="2rf-QK-CIn"/>
+                            <constraint firstItem="Ztt-1g-9Vm" firstAttribute="leading" secondItem="4bm-4l-mWk" secondAttribute="trailing" constant="17" id="7Ae-Lj-FU7"/>
+                            <constraint firstItem="1go-CR-aYF" firstAttribute="leading" secondItem="Ztt-1g-9Vm" secondAttribute="trailing" constant="17" id="8lv-It-gAm"/>
+                            <constraint firstItem="1go-CR-aYF" firstAttribute="centerY" secondItem="Ztt-1g-9Vm" secondAttribute="centerY" id="8mg-Wy-QOK"/>
+                            <constraint firstItem="LfD-NJ-Rlb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GqW-SR-Q9u"/>
+                            <constraint firstItem="yM5-4Q-LbK" firstAttribute="leading" secondItem="IlK-3D-aaz" secondAttribute="trailing" constant="51" id="Ibv-xK-54V"/>
+                            <constraint firstItem="IlK-3D-aaz" firstAttribute="top" secondItem="a9p-Qt-qcx" secondAttribute="bottom" constant="32" id="UiU-A1-BsQ"/>
+                            <constraint firstItem="a9p-Qt-qcx" firstAttribute="leading" secondItem="IlK-3D-aaz" secondAttribute="trailing" constant="-110" id="Urv-5D-krP"/>
+                            <constraint firstItem="opT-eY-oCl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cAn-a2-aPb"/>
+                            <constraint firstItem="yb6-B4-KYL" firstAttribute="leading" secondItem="opT-eY-oCl" secondAttribute="trailing" constant="17" id="dyd-cM-Mhz"/>
+                            <constraint firstItem="Ztt-1g-9Vm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gvM-qE-JMJ"/>
+                            <constraint firstItem="Ztt-1g-9Vm" firstAttribute="top" secondItem="Kwg-Sz-3Gd" secondAttribute="bottom" constant="32" id="hne-R2-PQp"/>
+                            <constraint firstItem="yM5-4Q-LbK" firstAttribute="centerY" secondItem="IlK-3D-aaz" secondAttribute="centerY" id="i3x-41-mjV"/>
+                            <constraint firstItem="opT-eY-oCl" firstAttribute="leading" secondItem="lAq-AG-4h8" secondAttribute="trailing" constant="17" id="i7b-xF-o35"/>
+                            <constraint firstItem="LfD-NJ-Rlb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="72" id="n0h-vV-gIr"/>
+                            <constraint firstItem="a9p-Qt-qcx" firstAttribute="top" secondItem="Ztt-1g-9Vm" secondAttribute="bottom" constant="75" id="oKV-bb-l30"/>
+                            <constraint firstItem="lAq-AG-4h8" firstAttribute="centerY" secondItem="opT-eY-oCl" secondAttribute="centerY" id="p76-4I-vt3"/>
+                            <constraint firstItem="yb6-B4-KYL" firstAttribute="centerY" secondItem="opT-eY-oCl" secondAttribute="centerY" id="qUb-3o-9Iw"/>
+                            <constraint firstItem="Kwg-Sz-3Gd" firstAttribute="top" secondItem="opT-eY-oCl" secondAttribute="bottom" constant="78" id="xm8-Qy-VAs"/>
+                            <constraint firstItem="opT-eY-oCl" firstAttribute="top" secondItem="LfD-NJ-Rlb" secondAttribute="bottom" constant="32" id="xu4-1e-uG4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outletCollection property="tapticButtons" destination="lAq-AG-4h8" collectionClass="NSMutableArray" id="QNL-qA-VhD"/>
+                        <outletCollection property="tapticButtons" destination="opT-eY-oCl" collectionClass="NSMutableArray" id="XXv-e5-C5K"/>
+                        <outletCollection property="tapticButtons" destination="yb6-B4-KYL" collectionClass="NSMutableArray" id="ICJ-lf-eJI"/>
+                        <outletCollection property="tapticButtons" destination="4bm-4l-mWk" collectionClass="NSMutableArray" id="wrD-ko-Lwt"/>
+                        <outletCollection property="tapticButtons" destination="Ztt-1g-9Vm" collectionClass="NSMutableArray" id="TKN-rg-6Av"/>
+                        <outletCollection property="tapticButtons" destination="1go-CR-aYF" collectionClass="NSMutableArray" id="2FV-D9-sVH"/>
+                        <outletCollection property="tapticButtons" destination="IlK-3D-aaz" collectionClass="NSMutableArray" id="zav-Ol-Qur"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="81"/>
+        </scene>
+    </scenes>
+</document>
